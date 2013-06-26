@@ -1,0 +1,36 @@
+<!doctype HTML>
+<html>
+	<head>
+		<title>Runner</title>
+		<link rel="icon" type="image/x-icon" href="jasmine.png">
+		<link rel="stylesheet" type="text/css" href="jasmine.css">
+		<script type="text/javascript" src="jasmine.js"></script>
+		<script type="text/javascript" src="matchers.js"></script>
+		<script type="text/javascript" src="jasmine-html.js"></script>
+		<script type="text/javascript" src="../../source/lodash.js"></script>
+		<script type="text/javascript" src="../../source/EventEmitter2.js"></script>
+		<script type="text/javascript" src="../../source/async.js"></script>
+        <script type="text/javascript" src="../../source/utility.js"></script>
+        <script type="text/javascript" src="../../source/Request.js"></script>
+		<script type="text/javascript" src="../../source/StateMachine.js"></script>
+		<script type="text/javascript" src="../StateMachineSpec.js"></script>
+		<script type="text/javascript">
+			(function() {
+				var environment = jasmine.getEnv();
+				var reporter = new jasmine.HtmlReporter();
+
+				environment.addReporter(reporter);
+
+				environment.specFilter = function(specification) {
+					return reporter.specFilter(specification);
+				};
+
+				window.onload = function() {
+					environment.execute();
+				};
+			})();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
